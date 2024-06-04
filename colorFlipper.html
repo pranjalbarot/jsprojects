@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding: 10px 20px;
+            margin: 50px;
+            border-radius: 10px;
+        }
+        #green{
+            background-color: green;
+        }
+        #red{
+            background-color: red;
+        }
+        #blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>color flipper</h1>
+    <button id="green" onclick="setColor('green')">green</button>
+    <button id="red" onclick="setColor('red')">red</button>
+    <button id="blue" onclick="setColor('blue')">blue</button>
+    <button onclick="randomColor()">random </button>
+    <script>
+
+const body = document.getElementsByTagName('body')[0]
+
+
+function setColor(name){
+    body.style.backgroundColor = name
+}
+
+function randomColor(){
+    const green = Math.round(Math.random() * 255)
+    const red = Math.round(Math.random() * 255)
+    const blue = Math.round(Math.random() * 255)
+
+    const color = `rgb(${red},${green},${blue})`;
+
+    body.style.backgroundColor = color
+}
+
+    </script>
+</body>
+</html>
